@@ -32,7 +32,7 @@ const renderPass = new RenderPass(scene, camera);
 composer.addPass(renderPass);
 
 const rgbShiftPass = new ShaderPass(RGBShiftShader);
-rgbShiftPass.uniforms['amount'].value = 0.0015;
+rgbShiftPass.uniforms['amount'].value = 0.00;
 composer.addPass(rgbShiftPass);
 
 const premGenertor = new THREE.PMREMGenerator(renderer);
@@ -61,8 +61,8 @@ new RGBELoader().load('https://dl.polyhaven.org/file/ph-assets/HDRIs/hdr/1k/pond
 window.addEventListener('mousemove', (e) => {
 if(model){
   gsap.to(model.rotation, {
-    y: (e.clientX / window.innerWidth - 0.5) * Math.PI * 0.3,
-    x: (e.clientY / window.innerHeight - 0.5) * Math.PI * 0.3,
+    y: (e.clientX / window.innerWidth - 0.5) * Math.PI * 0.12,
+    x: (e.clientY / window.innerHeight - 0.5) * Math.PI * 0.12,
     duration: 0.8,
     ease: "power2.out"
   });
